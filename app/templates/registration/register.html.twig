@@ -3,13 +3,26 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+  <h1>Register</h1>
+  
+  {{ form_start(registrationForm) }}
+  <div class="form-group">
+    {{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'autofocus': 'true'}, 'label': 'Email'}) }}
+  </div>
+  <div class="form-group">
+    {{ form_row(registrationForm.pseudo, {'attr': {'class': 'form-control'}, 'label': 'Entrez votre pseudo'}) }}
+  </div>
+  <div class="form-group">
+    {{ form_row(registrationForm.password.first, {'attr': {'class': 'form-control'}, 'label': 'Entrez votre mot de passe'}) }}
+  </div>
+  <div class="form-group">
+    {{ form_row(registrationForm.password.second, {'attr': {'class': 'form-control'}, 'label': 'Entrez de nouveau votre mot de passe'}) }}
+  </div>
+  
+  <div class="form-group">
+    {{ form_row(registrationForm.agreeTerms, {'label': 'Accepter les termes'}) }}
+  </div>
+  
+  <button class="btn btn-primary">Inscription</button>
+  {{ form_end(registrationForm) }}
 {% endblock %}
