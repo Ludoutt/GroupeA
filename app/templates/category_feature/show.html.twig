@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategoryFeature{% endblock %}
+
+{% block body %}
+    <h1>CategoryFeature</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ category_feature.id }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ category_feature.createdAt ? category_feature.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ category_feature.updatedAt ? category_feature.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_feature_index') }}">back to list</a>
+
+    <a href="{{ path('category_feature_edit', {'id': category_feature.id}) }}">edit</a>
+
+    {{ include('category_feature/_delete_form.html.twig') }}
+{% endblock %}
