@@ -9,6 +9,7 @@
 /vendor/
 .idea
 .DS_STORE
+/node_modules
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

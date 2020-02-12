@@ -7,9 +7,16 @@
 ## Installation :
 
 * Clone repo
-* cd /site
+* cd /app
 * composer install
 * php bin/console server:run
+
+## Installation front :
+
+* Installation de Ruby: https://rubyinstaller.org/downloads/
+* commande: gem install sass
+* commande: gem install compass
+* npm install
 
 ## Nommage des branches :
 
