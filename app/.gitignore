@@ -1,9 +1,8 @@
 
 ###> symfony/framework-bundle ###
-<<<<<<< HEAD
+
 /.env
-=======
->>>>>>> parent of 71984e9... Création login et logout
+
 /.env.local
 /.env.local.php
 /.env.*.local
