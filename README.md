@@ -10,8 +10,8 @@
 * cd /site
 * composer install
 * Config your .env file for your database connexion
-* php bin/console d:c
-* php bin/console d:m:m
+* php bin/console doctrine:database:create
+* php bin/console doctrine:migrations:migrate
 * php bin/console doctrine:fixtures:load
 * php bin/console server:run
 
