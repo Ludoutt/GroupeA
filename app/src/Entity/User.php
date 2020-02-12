@@ -55,6 +55,12 @@ class User implements UserInterface
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\BoardUser", inversedBy="users")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $boardUser;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -177,6 +183,18 @@ class User implements UserInterface
     public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getBoardUser(): ?BoardUser
+    {
+        return $this->boardUser;
+    }
+
+    public function setBoardUser(?BoardUser $boardUser): self
+    {
+        $this->boardUser = $boardUser;
 
         return $this;
     }
