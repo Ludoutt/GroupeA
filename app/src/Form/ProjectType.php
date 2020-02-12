@@ -12,16 +12,13 @@ class ProjectType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('createdAt')
-            ->add('updatedAt')
-        ;
+          ->add('title');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Project::class,
+          'data_class' => Project::class,
         ]);
     }
 }

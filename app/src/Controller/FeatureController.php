@@ -35,6 +35,9 @@ class FeatureController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $feature->setCreatedAt(new \DateTime());
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($feature);
             $entityManager->flush();
@@ -67,6 +70,9 @@ class FeatureController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $feature->setUpdatedAt(new \DateTime());
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('feature_index');

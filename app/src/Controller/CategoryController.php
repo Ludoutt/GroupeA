@@ -35,6 +35,8 @@ class CategoryController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $category->setCreatedAt(new \DateTime());
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($category);
             $entityManager->flush();
@@ -67,6 +69,8 @@ class CategoryController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $category->setUpdatedAt(new \DateTime());
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('category_index');
