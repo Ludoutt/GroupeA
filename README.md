@@ -2,7 +2,7 @@
 
 ## Technologies :
 
-* Symfony 5
+* Symfony 4
 
 ## Installation :
 
