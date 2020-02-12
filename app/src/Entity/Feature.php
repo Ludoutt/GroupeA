@@ -44,7 +44,7 @@ class Feature
     private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
 
@@ -52,6 +52,11 @@ class Feature
      * @ORM\OneToMany(targetEntity="App\Entity\CategoryFeature", mappedBy="feature", orphanRemoval=true)
      */
     private $categoryFeatures;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $sortBy;
 
     public function __construct()
     {
@@ -162,6 +167,18 @@ class Feature
                 $categoryFeature->setFeature(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSortBy(): ?int
+    {
+        return $this->sortBy;
+    }
+
+    public function setSortBy(?int $sortBy): self
+    {
+        $this->sortBy = $sortBy;
 
         return $this;
     }

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategoryFeature index{% endblock %}
+
+{% block body %}
+    <h1>CategoryFeature index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category_feature in category_features %}
+            <tr>
+                <td>{{ category_feature.id }}</td>
+                <td>{{ category_feature.createdAt ? category_feature.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ category_feature.updatedAt ? category_feature.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('category_feature_show', {'id': category_feature.id}) }}">show</a>
+                    <a href="{{ path('category_feature_edit', {'id': category_feature.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_feature_new') }}">Create new</a>
+{% endblock %}
