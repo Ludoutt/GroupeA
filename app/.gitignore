@@ -10,6 +10,7 @@
 .idea
 .DS_STORE
 /node_modules
+gulpfile.js.back
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
