@@ -1,34 +1,87 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Project{% endblock %}
+    {% block stylesheets %}
+        <style type="text/css">
+            .box {
+                display: flex;
+                justify-content: space-around;
+                border: 1px solid red;
+                width: 100%;
+                height: 650px;
+                padding-top: 15px;
+            }
+            .category-box {
+                width: 30%;
+                height: 550px;
+                border: 1px solid black;
+                overflow: scroll;
+            }
+            .category-box-header {
+                width: 100%;
+                height: 30px;
+                background: green;
+                color: white;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+            }
+
+            .feature-box {
+                width: 70%;
+                height: auto;
+                border: 1px solid blue;
+                margin: 0 auto;
+                margin-bottom: 20px;
+                display: flex;
+            }
+            .feature-id {
+                background: green;
+                height: 100%;
+                width: 5%;
+                font-weight: bold;
+                color: white;
+            }
+            .feature-content {
+                width: 65%;
+                background: red;
+                height: 100%;
+            }
+            .feature-action {
+                width: 30%;
+                background: green;
+                height: 100%;
+            }
+        </style>
+    {% endblock %}
 
 {% block body %}
-    <h1>Project</h1>
+    <div class="box">
+        {% for category in project.categories %}
+            <div class="category-box">
+                <div class="category-box-header">
+                    {{ category.title }}
+                </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ project.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ project.title }}</td>
-            </tr>
-            <tr>
-                <th>CreatedAt</th>
-                <td>{{ project.createdAt ? project.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>UpdatedAt</th>
-                <td>{{ project.updatedAt ? project.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+                <br>
 
-    <a href="{{ path('project_index') }}">back to list</a>
-
-    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
-
-    {{ include('project/_delete_form.html.twig') }}
+                {% for categoryFeature in category.categoryFeatures | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
+                    <div class="feature-box">
+                        <div class="feature-id">{{ categoryFeature.feature.id }}</div>
+                        <div class="feature-content">
+                            <p>{{ categoryFeature.feature.title }}</p>
+                            <p>{{ categoryFeature.feature.jobValue }}</p>
+                            <p>{{ categoryFeature.feature.description }}</p>
+                            <p>{{ categoryFeature.feature.acceptationValidation }}</p>
+                            <p>{{ categoryFeature.feature.createdAt ? categoryFeature.feature.createdAt|date('Y-m-d H:i:s') : '' }}</p>
+                        </div>
+                        <div class="feature-action">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
