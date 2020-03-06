@@ -7,13 +7,20 @@
 ## Installation :
 
 * Clone repo
-* cd /site
+* cd /app
 * composer install
 * Config your .env file for your database connexion
 * php bin/console doctrine:database:create
 * php bin/console doctrine:migrations:migrate
 * php bin/console doctrine:fixtures:load
 * php bin/console server:run
+
+## Installation front :
+
+* Installation de Ruby: https://rubyinstaller.org/downloads/
+* commande: gem install sass
+* commande: gem install compass
+* npm install
 
 ## Nommage des branches :
 
