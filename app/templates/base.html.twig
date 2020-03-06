@@ -7,18 +7,29 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" type="text/css" href="{{ asset('build/configuration.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('build/bootstrap-grid.min.css') }}">
         {% endblock %}
     </head>
     <body>
         {% block header %}
             <header id="header">
                 <div class="bg-header"></div>
-                <img class="logo" alt="logo" src="{{ asset('assets/img/.png') }}" />
+                <div class="logo"><img alt="logo" src="{{ asset('assets/img/logo.svg') }}" /></div>
                 <a class="button"><img class="profile" alt="logo" src="{{ asset('assets/img/profile.png') }}" /></a>
                 <a class="button"><img class="logout" alt="logo" src="{{ asset('assets/img/logout.png') }}" /></a>
             </header>
         {% endblock %}
+        {% block nav %}
+            <nav id="main-nav">
+                <div class="bg-header"></div>
+                <div class="logo"><img alt="logo" src="{{ asset('assets/img/logo.svg') }}" /></div>
+                <a class="button"><img class="profile" alt="logo" src="{{ asset('assets/img/profile.png') }}" /></a>
+                <a class="button"><img class="logout" alt="logo" src="{{ asset('assets/img/logout.png') }}" /></a>
+            </nav>
+        {% endblock %}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('build/bootstrap.min.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

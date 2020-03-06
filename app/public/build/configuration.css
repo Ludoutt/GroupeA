@@ -64,7 +64,12 @@ header#header {
     height: 82px;
     position: absolute;
     top: 13px;
-    left: 46px; }
+    left: 46px;
+    background-color: #ffffff;
+    border-radius: 50%; }
+    header#header .logo img {
+      width: 82px;
+      height: 82px; }
   header#header a.button {
     width: 92px;
     height: 100%;
@@ -79,3 +84,11 @@ header#header {
     header#header a.button .profile {
       width: 38px;
       height: 40px; }
+
+nav#main-nav {
+  height: 68px;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: flex-end; }

@@ -23,6 +23,12 @@ header#header{
         position: absolute;
         top: 13px;
         left: 46px;
+        background-color: $color-white;
+        border-radius: 50%;
+        img {
+            width: 82px;
+            height: 82px;
+        }
     }
     a.button{
         width: 92px;

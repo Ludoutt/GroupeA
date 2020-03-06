@@ -22,3 +22,4 @@ gulpfile.js.back
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
+.sass-cache/*
