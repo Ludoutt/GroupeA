@@ -3,13 +3,13 @@ Error: Undefined variable: "$color-white".
         on line 3 of C:/Users/soyug/OneDrive/IUT/LPDEV/Gestion de projet/Projet/GroupeA/app/assets/sass/nav.scss
 
 1: nav#main-nav{
-2:     height: 68px;
+2:     height: 58px;
 3:     background-color: $color-white;
 4:     overflow: hidden;
 5:     position: relative;
 6:     display: flex;
-7:     justify-content: flex-end;
-8: }
+7:     justify-content: flex-start;
+8:     align-items: center;
 
 Backtrace:
 C:/Users/soyug/OneDrive/IUT/LPDEV/Gestion de projet/Projet/GroupeA/app/assets/sass/nav.scss:3
@@ -68,4 +68,4 @@ C:/Ruby26-x64/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-white\".\A         on line 3 of C:/Users/soyug/OneDrive/IUT/LPDEV/Gestion de projet/Projet/GroupeA/app/assets/sass/nav.scss\A \A 1: nav#main-nav{\A 2:     height: 68px;\A 3:     background-color: $color-white;\A 4:     overflow: hidden;\A 5:     position: relative;\A 6:     display: flex;\A 7:     justify-content: flex-end;\A 8: }"; }
+  content: "Error: Undefined variable: \"$color-white\".\A         on line 3 of C:/Users/soyug/OneDrive/IUT/LPDEV/Gestion de projet/Projet/GroupeA/app/assets/sass/nav.scss\A \A 1: nav#main-nav{\A 2:     height: 58px;\A 3:     background-color: $color-white;\A 4:     overflow: hidden;\A 5:     position: relative;\A 6:     display: flex;\A 7:     justify-content: flex-start;\A 8:     align-items: center;"; }

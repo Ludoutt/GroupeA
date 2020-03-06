@@ -1,8 +1,31 @@
 nav#main-nav{
-    height: 68px;
+    height: 58px;
     background-color: $color-white;
     overflow: hidden;
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-box-shadow: -1px 10px 20px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 10px 20px -9px rgba(0,0,0,0.75);
+    box-shadow: -1px 10px 20px -9px rgba(0,0,0,0.75);
+    margin-top: -60px;
+    margin-bottom: 60px;
+    h1{
+        margin-left: 46px;
+        margin-right: 46px;
+    }
+    .space{
+        height: 34px;
+        width: 1px;
+        border: solid 1px $color-green-light;
+    }
+    a.link-nav{
+        padding: 15px 20px;
+        margin: 0 30px;
+        font-family: $font-family-default;
+        font-size: 20px;
+        color: $color-green-dark;
+        font-weight: bold;
+    }
 }

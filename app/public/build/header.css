@@ -3,13 +3,13 @@ Error: Undefined variable: "$color-green-dark".
         on line 3 of C:/Users/soyug/OneDrive/IUT/LPDEV/Gestion de projet/Projet/GroupeA/app/assets/sass/header.scss
 
 1: header#header{
-2:     height: 110px;
+2:     height: 55px;
 3:     background-color: $color-green-dark;
 4:     overflow: hidden;
 5:     position: relative;
 6:     display: flex;
 7:     justify-content: flex-end;
-8:     .bg-header{
+8:     margin-bottom: 60px;
 
 Backtrace:
 C:/Users/soyug/OneDrive/IUT/LPDEV/Gestion de projet/Projet/GroupeA/app/assets/sass/header.scss:3
@@ -68,4 +68,4 @@ C:/Ruby26-x64/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-green-dark\".\A         on line 3 of C:/Users/soyug/OneDrive/IUT/LPDEV/Gestion de projet/Projet/GroupeA/app/assets/sass/header.scss\A \A 1: header#header{\A 2:     height: 110px;\A 3:     background-color: $color-green-dark;\A 4:     overflow: hidden;\A 5:     position: relative;\A 6:     display: flex;\A 7:     justify-content: flex-end;\A 8:     .bg-header{"; }
+  content: "Error: Undefined variable: \"$color-green-dark\".\A         on line 3 of C:/Users/soyug/OneDrive/IUT/LPDEV/Gestion de projet/Projet/GroupeA/app/assets/sass/header.scss\A \A 1: header#header{\A 2:     height: 55px;\A 3:     background-color: $color-green-dark;\A 4:     overflow: hidden;\A 5:     position: relative;\A 6:     display: flex;\A 7:     justify-content: flex-end;\A 8:     margin-bottom: 60px;"; }
