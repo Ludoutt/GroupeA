@@ -7,17 +7,13 @@
     padding-top: 15px;
 }
 .category-box {
-    width: 30%;
-    height: 550px;
-    border: 1px solid black;
-    overflow: scroll;
+    max-height: 650px;
+    border: 2px solid $color-green-dark;
+    overflow-y: scroll;
 }
 .category-box-header {
-    width: 100%;
     height: 30px;
-    background: green;
-    color: white;
-    font-weight: bold;
+    background-color: $color-green-dark;
     display: flex;
     justify-content: center;
     align-items: center;

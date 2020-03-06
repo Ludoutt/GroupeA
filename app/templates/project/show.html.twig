@@ -3,29 +3,31 @@
 {% block title %}Projet - {{ project.title }}{% endblock %}
 {% block titleproject %}{{ project.title }}{% endblock %}
 {% block body %}
-    <div class="box">
+    <div class="container">
+        <div class="row">
         {% for category in project.categories %}
-            <div class="category-box">
-                <div class="category-box-header">
-                    {{ category.title }}
-                </div>
-
-                <br>
-
-                {% for categoryFeature in category.categoryFeatures | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
-                    <div class="feature-box">
-                        <div class="feature-id">{{ categoryFeature.feature.id }}</div>
-                        <div class="feature-content">
-                            <p>{{ categoryFeature.feature.title }}</p>
-                            <p>{{ categoryFeature.feature.jobValue }}</p>
-                            <p>{{ categoryFeature.feature.description }}</p>
-                            <p>{{ categoryFeature.feature.acceptationValidation }}</p>
-                            <p>{{ categoryFeature.feature.createdAt ? categoryFeature.feature.createdAt|date('Y-m-d H:i:s') : '' }}</p>
-                        </div>
-                        <div class="feature-action">
-                        </div>
+            <div class="col-4">
+                <div class="category-box">
+                    <div class="category-box-header">
+                        <h2>{{ category.title }}</h2>
                     </div>
-                {% endfor %}
+                    <div class="features-box">
+                        {% for categoryFeature in category.categoryFeatures | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
+                            <div class="feature-box">
+                                <div class="feature-id">{{ categoryFeature.feature.id }}</div>
+                                <div class="feature-content">
+                                    <p>{{ categoryFeature.feature.title }}</p>
+                                    <p>{{ categoryFeature.feature.jobValue }}</p>
+                                    <p>{{ categoryFeature.feature.description }}</p>
+                                    <p>{{ categoryFeature.feature.acceptationValidation }}</p>
+                                    <p>{{ categoryFeature.feature.createdAt ? categoryFeature.feature.createdAt|date('Y-m-d H:i:s') : '' }}</p>
+                                </div>
+                                <div class="feature-action">
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         {% endfor %}
     </div>
