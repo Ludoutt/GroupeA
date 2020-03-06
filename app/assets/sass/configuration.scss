@@ -1,3 +1,57 @@
-.dev {
-    display: flex;
+$font-family-title: 'Ubuntu', sans-serif;
+$font-family-default: 'Nunito', sans-serif;
+$color-green-dark: #018F74;
+$color-green-light: #4bc3aa;
+$color-white: #ffffff;
+$color-default: #707070;
+
+h1 {
+    font-family: $font-family-title;
+    font-size: 20px;
+    font-weight: bold;
+    color: $color-green-dark;
+    margin: 0;
+    padding: 0;
 }
+h2 {
+    font-family: $font-family-title;
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-white;
+    margin: 0;
+    padding: 0;
+}
+h3 {
+    font-family: $font-family-default;
+    font-size: 11px;
+    color: $color-default;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+h4 {
+    font-family: $font-family-default;
+    font-size: 11px;
+    color: $color-white;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+p {
+    font-family: $font-family-default;
+    font-size: 9px;
+    color: $color-default;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family-default;
+}
+
+@import "header.scss";
+@import "nav.scss"

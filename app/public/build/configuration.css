@@ -1,3 +1,119 @@
-.test {
+h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #018F74;
+  margin: 0;
+  padding: 0; }
+
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  padding: 0; }
+
+h3 {
+  font-family: "Nunito", sans-serif;
+  font-size: 11px;
+  color: #707070;
+  font-weight: bold;
+  margin: 0;
+  padding: 0; }
+
+h4 {
+  font-family: "Nunito", sans-serif;
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0;
+  padding: 0; }
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-size: 9px;
+  color: #707070;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif; }
+
+header#header {
+  height: 55px;
+  background-color: #018F74;
+  overflow: hidden;
+  position: relative;
   display: flex;
-  box-sizing: border-box; }
+  justify-content: flex-end;
+  margin-bottom: 60px; }
+  header#header .bg-header {
+    width: 467px;
+    background-color: #4bc3aa;
+    position: absolute;
+    top: 0;
+    left: -60px;
+    bottom: 0;
+    -webkit-transform: skew(-45deg);
+    -moz-transform: skew(-45deg);
+    -o-transform: skew(-45deg);
+    tranform: skew(-45deg); }
+  header#header .logo {
+    width: 41px;
+    height: 41px;
+    position: absolute;
+    top: 7px;
+    left: 46px;
+    background-color: #ffffff;
+    border-radius: 50%; }
+    header#header .logo img {
+      width: 41px;
+      height: 41px; }
+  header#header a.button {
+    width: 92px;
+    height: 100%;
+    background-color: #4bc3aa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px; }
+    header#header a.button .logout {
+      width: 21px;
+      height: 19px; }
+    header#header a.button .profile {
+      width: 19px;
+      height: 20px; }
+
+nav#main-nav {
+  height: 58px;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -webkit-box-shadow: -1px 10px 20px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 10px 20px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 10px 20px -9px rgba(0, 0, 0, 0.75);
+  margin-top: -60px;
+  margin-bottom: 60px; }
+  nav#main-nav h1 {
+    margin-left: 46px;
+    margin-right: 46px; }
+  nav#main-nav .space {
+    height: 34px;
+    width: 1px;
+    border: solid 1px #4bc3aa; }
+  nav#main-nav a.link-nav {
+    padding: 15px 20px;
+    margin: 0 30px;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    color: #018F74;
+    font-weight: bold; }
