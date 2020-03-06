@@ -1,3 +1,81 @@
-.test {
+h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #018F74;
+  margin: 0;
+  padding: 0; }
+
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  padding: 0; }
+
+h3 {
+  font-family: "Nunito", sans-serif;
+  font-size: 11px;
+  color: #707070;
+  font-weight: bold;
+  margin: 0;
+  padding: 0; }
+
+h4 {
+  font-family: "Nunito", sans-serif;
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0;
+  padding: 0; }
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-size: 9px;
+  color: #707070;
+  margin: 0;
+  padding: 0; }
+
+body, html {
+  margin: 0;
+  padding: 0; }
+
+header#header {
+  height: 110px;
+  background-color: #018F74;
+  overflow: hidden;
+  position: relative;
   display: flex;
-  box-sizing: border-box; }
+  justify-content: flex-end; }
+  header#header .bg-header {
+    width: 467px;
+    background-color: #4bc3aa;
+    position: absolute;
+    top: 0;
+    left: -60px;
+    bottom: 0;
+    -webkit-transform: skew(-45deg);
+    -moz-transform: skew(-45deg);
+    -o-transform: skew(-45deg);
+    tranform: skew(-45deg); }
+  header#header .logo {
+    width: 82px;
+    height: 82px;
+    position: absolute;
+    top: 13px;
+    left: 46px; }
+  header#header a.button {
+    width: 92px;
+    height: 100%;
+    background-color: #4bc3aa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px; }
+    header#header a.button .logout {
+      width: 42px;
+      height: 37px; }
+    header#header a.button .profile {
+      width: 38px;
+      height: 40px; }

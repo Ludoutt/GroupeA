@@ -2,10 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('build/configuration.css') }}">
+        {% endblock %}
     </head>
     <body>
+        {% block header %}
+            <header id="header">
+                <div class="bg-header"></div>
+                <img class="logo" alt="logo" src="{{ asset('assets/img/.png') }}" />
+                <a class="button"><img class="profile" alt="logo" src="{{ asset('assets/img/profile.png') }}" /></a>
+                <a class="button"><img class="logout" alt="logo" src="{{ asset('assets/img/logout.png') }}" /></a>
+            </header>
+        {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
