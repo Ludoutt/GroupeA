@@ -3,13 +3,6 @@
 {% block title %}Bienvenue sur Backlog{% endblock %}
 
 {% block body %}
-    <header>
-        <div class="logo-box">
-            <a href="{{ path('root') }}">
-                <img class="logo" alt="logo" src="{{ asset('assets/img/logo.svg') }}" />
-            </a>
-        </div>
-    </header>
     <div class="form-container">
         <div class="form-box">
             <div class="lateral-box"></div>
@@ -17,7 +10,11 @@
                 <h1>bienvenue sur backlog</h1>
                 <br>
                 <div class="link">
-                    <a class="custom-button" href="#">Se connecter</a>
+                    {% if app.user %}
+                        <a class="custom-button" href="{{ path('app_logout') }}">Déconnexion</a>
+                    {% else %}
+                        <a class="custom-button" href="{{ path('app_login') }}">Se connecter</a>
+                    {% endif %}
                     <br>
                     <br>
                     <a class="custom-button" href="#">S'inscrire</a>
