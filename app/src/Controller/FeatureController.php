@@ -94,7 +94,6 @@ class FeatureController extends AbstractController
             $entityManager->remove($feature);
             $entityManager->flush();
         }
-
-        return $this->redirectToRoute('feature_index');
+        return $this->redirectToRoute('project_show', ['id' => $request->request->get('_project')]);
     }
 }

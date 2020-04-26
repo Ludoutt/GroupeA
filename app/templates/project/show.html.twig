@@ -1,34 +1,71 @@
-{% extends 'base.html.twig' %}
+{% extends 'project.html.twig' %}
 
-{% block title %}Project{% endblock %}
-
+{% block title %}Projet - {{ project.title }}{% endblock %}
+{% block titleproject %}{{ project.title }}{% endblock %}
 {% block body %}
-    <h1>Project</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ project.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ project.title }}</td>
-            </tr>
-            <tr>
-                <th>CreatedAt</th>
-                <td>{{ project.createdAt ? project.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>UpdatedAt</th>
-                <td>{{ project.updatedAt ? project.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('project_index') }}">back to list</a>
-
-    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
-
-    {{ include('project/_delete_form.html.twig') }}
+    <div class="project">
+        <div class="container-fluid project-container">
+            <div class="row project-view">
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-4 global-col">
+                        <div class="category-box">
+                            <div class="category-box-header">
+                                <h2>Toutes les fonctionnalités</h2>
+                            </div>
+                            <div class="features-box">
+                                {% for category in project.categories %}
+                                    {% for categoryFeature in category.categoryFeatures | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
+                                        <div class="feature-box">
+                                            <div class="feature-id h3">{{ categoryFeature.feature.id }}</div>
+                                            <div class="feature-content">
+                                                <h3 class="feature-title">{{ categoryFeature.feature.title }}</h3>
+                                                <div class="feature-job_value h3">{{ categoryFeature.feature.jobValue }}</div>
+                                                <div class="description">{{ categoryFeature.feature.description }}</div>
+                                                <div class="validation">{{ categoryFeature.feature.acceptationValidation }}</div>
+                                            </div>
+                                            <div class="feature-action">
+                                                {% set feature = {'id': categoryFeature.feature.id, 'project': project.id} %}
+                                                {% include 'feature/_delete_form.html.twig' with feature %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% for category in project.categories %}
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-4 project-col">
+                        <div class="category-box">
+                            <div class="category-box-header">
+                                <h2>{{ category.title }}</h2>
+                                {% set categoryform = {'id': category.id, 'project': project.id} %}
+                                {% include 'category/_delete_form.html.twig' with categoryform %}
+                            </div>
+                            <div class="features-box">
+                                {% for categoryFeature in category.categoryFeatures | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
+                                    <div class="feature-box">
+                                        <div class="feature-id h3">{{ categoryFeature.feature.id }}</div>
+                                        <div class="feature-content">
+                                            <h3 class="feature-title">{{ categoryFeature.feature.title }}</h3>
+                                            <div class="feature-job_value h3">{{ categoryFeature.feature.jobValue }}</div>
+                                            <div class="description">{{ categoryFeature.feature.description }}</div>
+                                            <div class="validation">{{ categoryFeature.feature.acceptationValidation }}</div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <button class="category-action add-feature display-popup" data-category="{{ category.id }}" data-popup="-new_feature">
+                                <div class="h2">Ajouter une fonctionnalité</div>
+                                <img src="{{ asset('assets/img/plus.png') }}" alt="plus"></img>
+                            </button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% set project = {'project': project.id} %}
+    {% include 'category/_popup_new_category.html.twig' with project %}
+{% endblock %}
+{% block javascripts_front %}
+    <script src="{{ asset('build/project.js') }}"></script>
 {% endblock %}

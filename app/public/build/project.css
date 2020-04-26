@@ -1,3 +1,87 @@
+.project {
+  height: calc(100% - 209px); }
+  .project .project-container {
+    height: 100%; }
+    .project .project-container .project-view {
+      height: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      flex-wrap: nowrap; }
+      .project .project-container .project-view .project-col,
+      .project .project-container .project-view .global-col {
+        display: inline-block;
+        float: none; }
+        .project .project-container .project-view .project-col .category-box,
+        .project .project-container .project-view .global-col .category-box {
+          max-height: 650px;
+          border: 2px solid #018F74;
+          overflow-y: scroll; }
+          .project .project-container .project-view .project-col .category-box .category-box-header,
+          .project .project-container .project-view .global-col .category-box .category-box-header {
+            height: 50px;
+            background-color: #018F74;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+            padding: 0 23px; }
+          .project .project-container .project-view .project-col .category-box .category-action,
+          .project .project-container .project-view .global-col .category-box .category-action {
+            height: 50px;
+            background-color: #018F74;
+            border: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+            padding: 0 23px;
+            width: 100%; }
+          .project .project-container .project-view .project-col .category-box .features-box,
+          .project .project-container .project-view .global-col .category-box .features-box {
+            padding: 30px 23px; }
+            .project .project-container .project-view .project-col .category-box .features-box .feature-box,
+            .project .project-container .project-view .global-col .category-box .features-box .feature-box {
+              width: 100%;
+              height: auto;
+              border-left: 4px solid #4bc3aa;
+              margin: 0 auto;
+              margin-bottom: 38px;
+              padding: 14px 30px 30px 30px;
+              display: flex;
+              position: relative;
+              box-shadow: 3px 5px 8px 0px rgba(119, 119, 119, 0.6); }
+              .project .project-container .project-view .project-col .category-box .features-box .feature-box:last-child,
+              .project .project-container .project-view .global-col .category-box .features-box .feature-box:last-child {
+                margin-bottom: 0; }
+              .project .project-container .project-view .project-col .category-box .features-box .feature-box .feature-id,
+              .project .project-container .project-view .global-col .category-box .features-box .feature-box .feature-id {
+                background-color: #4bc3aa;
+                border-bottom-right-radius: 20px;
+                height: 20px;
+                width: 20px;
+                color: #ffffff;
+                text-align: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-left: -4px; }
+              .project .project-container .project-view .project-col .category-box .features-box .feature-box .feature-content,
+              .project .project-container .project-view .global-col .category-box .features-box .feature-box .feature-content {
+                background: #ffffff; }
+                .project .project-container .project-view .project-col .category-box .features-box .feature-box .feature-content .feature-job_value,
+                .project .project-container .project-view .global-col .category-box .features-box .feature-box .feature-content .feature-job_value {
+                  margin-top: 5px; }
+                .project .project-container .project-view .project-col .category-box .features-box .feature-box .feature-content .description,
+                .project .project-container .project-view .project-col .category-box .features-box .feature-box .feature-content .validation,
+                .project .project-container .project-view .global-col .category-box .features-box .feature-box .feature-content .description,
+                .project .project-container .project-view .global-col .category-box .features-box .feature-box .feature-content .validation {
+                  display: none; }
+      .project .project-container .project-view .global-col .feature-action {
+        position: absolute;
+        bottom: 0;
+        right: 0; }
+
 body {
   font-family: 'Ubuntu', sans-serif; }
 

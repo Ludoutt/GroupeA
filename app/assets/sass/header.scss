@@ -1,10 +1,13 @@
+@import "variables.scss";
+
 header#header{
-    height: 110px;
+    height: 55px;
     background-color: $color-green-dark;
     overflow: hidden;
     position: relative;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 60px;
     .bg-header{
         width: 467px;
         background-color: $color-green-light;
@@ -18,16 +21,16 @@ header#header{
         tranform:skew(-45deg);
     }
     .logo{
-        width: 82px;
-        height: 82px;
+        width: 41px;
+        height: 41px;
         position: absolute;
-        top: 13px;
+        top: 7px;
         left: 46px;
         background-color: $color-white;
         border-radius: 50%;
         img {
-            width: 82px;
-            height: 82px;
+            width: 41px;
+            height: 41px;
         }
     }
     a.button{
@@ -39,12 +42,12 @@ header#header{
         align-items: center;
         margin-right: 35px;
         .logout{
-            width: 42px;
-            height: 37px;
+            width: 21px;
+            height: 19px;
         }
         .profile{
-            width: 38px;
-            height: 40px;
+            width: 19px;
+            height: 20px;
         }
     }
 }

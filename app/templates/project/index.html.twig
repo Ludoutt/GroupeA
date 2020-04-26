@@ -2,25 +2,26 @@
 {% block title %}Vos projets{% endblock %}
 
 {% block body %}
+
     <h1>Vos projets</h1>
 
     <div class="container">
         <div class="row justify-content-center">
-        {% for project in projects %}
-            <div class="col-3 box-project d-flex flex-column align-items-center justify-content-center">
-                <h2>{{ project.title }}</h2>
-                <p class="creation-date"><span class="color-black">Date de création :</span> {{ project.createdAt ? project.createdAt|date('Y-m-d H:i:s') : '' }}</p>
-                <p class="update-date"><span class="color-black">Date de mise à jour :</span> {{ project.updatedAt ? project.updatedAt|date('Y-m-d H:i:s') : '' }}</p>
-                <div class="row">
-                    <div class="col-6">
-                        <a class="btn-project" href="{{ path('project_show', {'id': project.id}) }}">Visualiser</a>
-                    </div>
-                    <div class="col-6">
-                        <a class="btn-project" href="{{ path('project_edit', {'id': project.id}) }}">Editer</a>
+            {% for project in projects %}
+                <div class="col-3 box-project d-flex flex-column align-items-center justify-content-center">
+                    <h2>{{ project.title }}</h2>
+                    <p class="creation-date"><span class="color-black">Date de création :</span> {{ project.createdAt ? project.createdAt|date('Y-m-d H:i:s') : '' }}</p>
+                    <p class="update-date"><span class="color-black">Date de mise à jour :</span> {{ project.updatedAt ? project.updatedAt|date('Y-m-d H:i:s') : '' }}</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <a class="btn-project" href="{{ path('project_show', {'id': project.id}) }}">Visualiser</a>
+                        </div>
+                        <div class="col-6">
+                            <a class="btn-project" href="{{ path('project_edit', {'id': project.id}) }}">Editer</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
             <div class="col-3 box-plus d-flex flex-column align-items-center justify-content-center">
                 <a class="new-project" href="{{ path('project_new') }}"><img class="plus" alt="plus" src="{{ asset('assets/img/plus.svg') }}" /></a>
             </div>

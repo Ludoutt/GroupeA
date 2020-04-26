@@ -1,0 +1,40 @@
+@import "variables.scss";
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 113px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .popup-background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $background-popup;
+    }
+    .popup-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .popup-content {
+            z-index: 70;
+            position: relative;
+            background: $color-white;
+            padding: 20px;
+            border: solid 2px $color-green-dark;
+            form {
+                .form-none {
+                    display: none;
+                }
+            }
+        }
+    }
+}
