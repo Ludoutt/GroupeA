@@ -19,8 +19,17 @@
                                             <div class="feature-content">
                                                 <h3 class="feature-title">{{ categoryFeature.feature.title }}</h3>
                                                 <div class="feature-job_value h3">{{ categoryFeature.feature.jobValue }}</div>
-                                                <div class="description">{{ categoryFeature.feature.description }}</div>
-                                                <div class="validation">{{ categoryFeature.feature.acceptationValidation }}</div>
+                                            </div>
+                                            <div class="feature-developp-button"><img src="{{ asset('assets/img/details.png') }}" alt="details"></img></div>
+                                            <div class="feature-developp">
+                                                <div>
+                                                    <div class="wrap-edit"><span class="description-title h3">Description</span><button class="btn display-popup feature" data-popup="-edit_feature" data-title="{{ categoryFeature.feature.title }}" data-job="{{ categoryFeature.feature.jobValue }}" data-description="{{ categoryFeature.feature.description }}" data-validation="{{ categoryFeature.feature.acceptationValidation }}" data-id="{{ categoryFeature.feature.id }}" data-sort="{{ categoryFeature.feature.sortBy }}"><img class="edit" src="{{ asset('assets/img/edit.png') }}" alt="edit"></img></button></div>
+                                                    <p class="description">{{ categoryFeature.feature.description }}</p>
+                                                </div>
+                                                <div>
+                                                    <span class="validation-title h3">Critères d’acceptation</span>
+                                                    <p class="validation">{{ categoryFeature.feature.acceptationValidation }}</p>
+                                                </div>
                                             </div>
                                             <div class="feature-action">
                                                 {% set feature = {'id': categoryFeature.feature.id, 'project': project.id} %}
@@ -47,8 +56,6 @@
                                         <div class="feature-content">
                                             <h3 class="feature-title">{{ categoryFeature.feature.title }}</h3>
                                             <div class="feature-job_value h3">{{ categoryFeature.feature.jobValue }}</div>
-                                            <div class="description">{{ categoryFeature.feature.description }}</div>
-                                            <div class="validation">{{ categoryFeature.feature.acceptationValidation }}</div>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -65,6 +72,7 @@
     </div>
     {% set project = {'project': project.id} %}
     {% include 'category/_popup_new_category.html.twig' with project %}
+    {% include 'feature/_popup_edit_feature.html.twig' with project %}
 {% endblock %}
 {% block javascripts_front %}
     <script src="{{ asset('build/project.js') }}"></script>

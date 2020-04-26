@@ -3,11 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\Feature;
 use App\Entity\Project;
 use App\Form\CategoryType;
+use App\Form\FeatureType;
 use App\Form\ProjectType;
 use App\Repository\CategoryRepository;
 use App\Repository\ProjectRepository;
+use App\Repository\FeatureRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -64,9 +67,15 @@ class ProjectController extends AbstractController
             'action' => $this->generateUrl('category_new'),
             'method' => 'POST',
         ]);
+        $feature = new Feature();
+        $formFeature = $this->createForm(FeatureType::class, $feature, [
+            'action' => $this->generateUrl('feature_new'),
+            'method' => 'POST',
+        ]);
         return $this->render('project/show.html.twig', [
             'project' => $project,
             'formCategory' => $formCategory->createView(),
+            'formFeature' => $formFeature->createView(),
         ]);
     }
 
