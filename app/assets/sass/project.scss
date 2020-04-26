@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .project {
     height: calc(100% - 209px);
     .project-container {
@@ -20,7 +22,7 @@
                         height: 50px;
                         background-color: $color-green-dark;
                         display: flex;
-                        justify-content: flex-start;
+                        justify-content: space-between;
                         align-items: center;
                         text-transform: uppercase;
                         padding: 0 23px;

@@ -1,8 +1,8 @@
 $(".display-popup").click(function() {
     var popup = $(this).data('popup');
-    $('.'+popup).fadeIn()
+    $('.'+popup).fadeIn('fast')
 });
 
-$(".popup").click(function() {
-    $('.popup').fadeOut()
+$(".popup-background").click(function() {
+    $('.popup').fadeOut('fast')
 });

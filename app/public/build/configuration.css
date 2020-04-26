@@ -44,6 +44,31 @@ p, .project .project-container .project-view .project-col .category-box .feature
   margin: 0;
   padding: 0; }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+  form input {
+    font-family: "Nunito", sans-serif;
+    font-size: 11px;
+    color: #707070;
+    margin-bottom: 18px;
+    min-width: 167px; }
+    form input::placeholder {
+      color: #707070;
+      opacity: 0.5; }
+    form input[type="text"] {
+      border: none;
+      border-bottom: solid 1px #018F74;
+      padding: 5px 0; }
+  form .btn.submit {
+    color: #ffffff;
+    background-color: #018F74;
+    font-family: "Nunito", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 18px; }
+
 a {
   text-decoration: none; }
 
@@ -58,20 +83,6 @@ body, html {
   font-family: "Nunito", sans-serif;
   height: 100%;
   min-height: 100%; }
-
-.popup {
-  display: none;
-  position: absolute;
-  top: 113px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .popup .popup-content {
-    background-color: #ffffff;
-    padding: 20px; }
 
 header#header {
   height: 55px;
@@ -145,7 +156,8 @@ nav#main-nav {
     font-family: "Nunito", sans-serif;
     font-size: 20px;
     color: #018F74;
-    font-weight: bold; }
+    font-weight: bold;
+    cursor: pointer; }
 
 .project {
   height: calc(100% - 209px); }
@@ -171,7 +183,7 @@ nav#main-nav {
             height: 50px;
             background-color: #018F74;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             text-transform: uppercase;
             padding: 0 23px; }
@@ -230,3 +242,35 @@ nav#main-nav {
         position: absolute;
         bottom: 0;
         right: 0; }
+
+.popup {
+  display: none;
+  position: absolute;
+  top: 113px;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .popup .popup-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(1, 143, 116, 0.6); }
+  .popup .popup-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .popup .popup-container .popup-content {
+      z-index: 70;
+      position: relative;
+      background: #ffffff;
+      padding: 20px;
+      border: solid 2px #018F74; }
+      .popup .popup-container .popup-content form .form-none {
+        display: none; }

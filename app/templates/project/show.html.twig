@@ -37,6 +37,8 @@
                         <div class="category-box">
                             <div class="category-box-header">
                                 <h2>{{ category.title }}</h2>
+                                {% set categoryform = {'id': category.id, 'project': project.id} %}
+                                {% include 'category/_delete_form.html.twig' with categoryform %}
                             </div>
                             <div class="features-box">
                                 {% for categoryFeature in category.categoryFeatures | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
