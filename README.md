@@ -1,13 +1,19 @@
 # GroupeA
 
-## Technologies :
+## Technologies
 
 * Symfony 4
+* Gulp
+* Composer
+* npm
 
-## Installation :
+## Installation
 
 * Clone repo
 * cd /app
+
+### Backend
+
 * composer install
 * Config your .env file for your database connexion
 * php bin/console doctrine:database:create
@@ -15,12 +21,23 @@
 * php bin/console doctrine:fixtures:load
 * php bin/console server:run
 
-## Installation front :
+### Frontend
 
 * Installation de Ruby: https://rubyinstaller.org/downloads/
 * commande: gem install sass
 * commande: gem install compass
 * npm install
+* gulp watch || gulp css (pour compiler les fichiers scss en auto ou compiler manuellement)
+
+## Connexion :
+
+* admin@admin.com
+* toto
+
+## URL admin :
+
+* /admin
+
 
 ## Nommage des branches :
 
