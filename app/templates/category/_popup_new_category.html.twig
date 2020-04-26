@@ -1,0 +1,12 @@
+<div class="popup -new_category">
+    <div class="popup-container">
+        <div class="popup-content">
+            {{ form_start(formCategory) }}
+                {{ form_widget(formCategory.title, { 'attr': {'placeholder': 'Nom de la catégorie'} }) }}
+                {{ form_widget(formCategory.project, {value: project ~ "", 'attr': {'class': 'form-none'} } ) }}
+                <button class="btn submit">{{ button_label|default('Valider') }}</button>
+            {{ form_end(formCategory) }}
+        </div>
+    </div>
+    <span class="popup-background"></span>
+</div>

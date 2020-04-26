@@ -40,8 +40,8 @@ class CategoryController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($category);
             $entityManager->flush();
-
-            return $this->redirectToRoute('category_index');
+            $cat = $request->request->get('category');
+            return $this->redirectToRoute('project_show', ['id' => $cat['project']]);
         }
 
         return $this->render('category/new.html.twig', [
@@ -93,6 +93,6 @@ class CategoryController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('category_index');
+        return $this->redirectToRoute('project_show', ['id' => $request->request->get('_project')]);
     }
 }

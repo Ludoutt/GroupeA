@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Project;
+use App\Form\CategoryType;
 use App\Form\ProjectType;
+use App\Repository\CategoryRepository;
 use App\Repository\ProjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -54,8 +57,14 @@ class ProjectController extends AbstractController
      */
     public function show(Project $project): Response
     {
+        $category = new Category();
+        $formCategory = $this->createForm(CategoryType::class, $category, [
+            'action' => $this->generateUrl('category_new'),
+            'method' => 'POST',
+        ]);
         return $this->render('project/show.html.twig', [
             'project' => $project,
+            'formCategory' => $formCategory->createView(),
         ]);
     }
 

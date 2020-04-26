@@ -1,11 +1,7 @@
-$font-family-title: 'Ubuntu', sans-serif;
-$font-family-default: 'Nunito', sans-serif;
-$color-green-dark: #018F74;
-$color-green-light: #4bc3aa;
-$color-white: #ffffff;
-$color-default: #707070;
+@import "variables.scss";
 
-h1 {
+h1,
+.h1 {
     font-family: $font-family-title;
     font-size: 20px;
     font-weight: bold;
@@ -13,7 +9,8 @@ h1 {
     margin: 0;
     padding: 0;
 }
-h2 {
+h2,
+.h2 {
     font-family: $font-family-title;
     font-size: 16px;
     font-weight: bold;
@@ -21,7 +18,8 @@ h2 {
     margin: 0;
     padding: 0;
 }
-h3 {
+h3,
+.h3 {
     font-family: $font-family-default;
     font-size: 11px;
     color: $color-default;
@@ -29,7 +27,8 @@ h3 {
     margin: 0;
     padding: 0;
 }
-h4 {
+h4,
+.h4 {
     font-family: $font-family-default;
     font-size: 11px;
     color: $color-white;
@@ -44,13 +43,49 @@ p {
     margin: 0;
     padding: 0;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    input {
+        font-family: $font-family-default;
+        font-size: 11px;
+        color: $color-default;
+        margin-bottom: 18px;
+        min-width: 167px;
+        &::placeholder {
+            color: $color-default;
+            opacity: 0.5;
+        }
+        &[type="text"] {
+            border: none;
+            border-bottom: solid 1px $color-green-dark;
+            padding: 5px 0;
+        }
+    }
+    .btn.submit {
+        color: $color-white;
+        background-color: $color-green-dark;
+        font-family: $font-family-default;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 4px 18px;
+    }
+}
 a {
     text-decoration: none;
+}
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 body, html {
     margin: 0;
     padding: 0;
     font-family: $font-family-default;
+    height: 100%;
+    min-height: 100%;
 }
 .box-projects div {
     height: 140px;
@@ -74,3 +109,5 @@ body, html {
 
 @import "header.scss";
 @import "nav.scss";
+@import "project.scss";
+@import "popup.scss";

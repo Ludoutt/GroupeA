@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 nav#main-nav{
     height: 58px;
     background-color: $color-white;
@@ -20,6 +22,7 @@ nav#main-nav{
         width: 1px;
         border: solid 1px $color-green-light;
     }
+    div.link-nav,
     a.link-nav{
         padding: 15px 20px;
         margin: 0 30px;
@@ -27,5 +30,6 @@ nav#main-nav{
         font-size: 20px;
         color: $color-green-dark;
         font-weight: bold;
+        cursor: pointer;
     }
 }
