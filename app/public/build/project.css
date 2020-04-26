@@ -147,3 +147,11 @@ h2 {
 
 .box-plus {
   height: 225px; }
+
+.btn-project-danger {
+  background-color: red;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px; }
