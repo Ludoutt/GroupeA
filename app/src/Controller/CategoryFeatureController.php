@@ -20,6 +20,10 @@ class CategoryFeatureController extends AbstractController
      */
     public function index(CategoryFeatureRepository $categoryFeatureRepository): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         return $this->render('category_feature/index.html.twig', [
             'category_features' => $categoryFeatureRepository->findAll(),
         ]);
@@ -30,6 +34,10 @@ class CategoryFeatureController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         $categoryFeature = new CategoryFeature();
         $form = $this->createForm(CategoryFeatureType::class, $categoryFeature);
         $form->handleRequest($request);
@@ -56,6 +64,10 @@ class CategoryFeatureController extends AbstractController
      */
     public function show(CategoryFeature $categoryFeature): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         return $this->render('category_feature/show.html.twig', [
             'category_feature' => $categoryFeature,
         ]);
@@ -66,6 +78,10 @@ class CategoryFeatureController extends AbstractController
      */
     public function edit(Request $request, CategoryFeature $categoryFeature): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         $form = $this->createForm(CategoryFeatureType::class, $categoryFeature);
         $form->handleRequest($request);
 
@@ -89,6 +105,10 @@ class CategoryFeatureController extends AbstractController
      */
     public function delete(Request $request, CategoryFeature $categoryFeature): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+        
         if ($this->isCsrfTokenValid('delete'.$categoryFeature->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($categoryFeature);
