@@ -1,39 +1,29 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Project index{% endblock %}
+{% block title %}Vos projets{% endblock %}
 
 {% block body %}
-    <h1>Project index</h1>
+    <h1>Vos projets</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container">
+        <div class="row justify-content-center">
         {% for project in projects %}
-            <tr>
-                <td>{{ project.id }}</td>
-                <td>{{ project.title }}</td>
-                <td>{{ project.createdAt ? project.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ project.updatedAt ? project.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('project_show', {'id': project.id}) }}">show</a>
-                    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
+            <div class="col-3 box-project d-flex flex-column align-items-center justify-content-center">
+                <h2>{{ project.title }}</h2>
+                <p class="creation-date"><span class="color-black">Date de création :</span> {{ project.createdAt ? project.createdAt|date('Y-m-d H:i:s') : '' }}</p>
+                <p class="update-date"><span class="color-black">Date de mise à jour :</span> {{ project.updatedAt ? project.updatedAt|date('Y-m-d H:i:s') : '' }}</p>
+                <div class="row">
+                    <div class="col-6">
+                        <a class="btn-project" href="{{ path('project_show', {'id': project.id}) }}">Visualiser</a>
+                    </div>
+                    <div class="col-6">
+                        <a class="btn-project" href="{{ path('project_edit', {'id': project.id}) }}">Editer</a>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
+            <div class="col-3 box-plus d-flex flex-column align-items-center justify-content-center">
+                <a class="new-project" href="{{ path('project_new') }}"><img class="plus" alt="plus" src="{{ asset('assets/img/plus.svg') }}" /></a>
+            </div>
+    </div>
 
-    <a href="{{ path('project_new') }}">Create new</a>
 {% endblock %}
