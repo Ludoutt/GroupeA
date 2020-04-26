@@ -3,37 +3,27 @@
 {% block title %}Project index{% endblock %}
 
 {% block body %}
-    <h1>Project index</h1>
+    <nav id="main-nav">
+        <h1>Vos projets</h1>
+    </nav>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for project in projects %}
-            <tr>
-                <td>{{ project.id }}</td>
-                <td>{{ project.title }}</td>
-                <td>{{ project.createdAt ? project.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ project.updatedAt ? project.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('project_show', {'id': project.id}) }}">show</a>
-                    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row box-projects">
+            {% for project in projects %}
+                <div class="col-sm-2 offset-sm-1" style="display: flex;">
+                    <div class="box-lateral"></div>
+                    <div class="content">
+                        <p class="project-title">{{ project.title }}</p>
+                        <p class="project-title">
+                            <a href="{{ path('project_show', {'id': project.id}) }}">Voir le projet</a>
+                        </p>
+                    </div>
+                </div>
+            {% else %}
+                <p>Il n'y a encore aucun projets</p>
+            {% endfor %}
+        </div>
+    </div>
 
     <a href="{{ path('project_new') }}">Create new</a>
 {% endblock %}

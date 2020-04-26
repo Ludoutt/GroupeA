@@ -10,7 +10,6 @@ $(".display-popup.feature").click(function() {
     var job = $(this).data('job');
     var validation = $(this).data('validation');
     var description = $(this).data('description');
-    console.log(validation);
     $('#feature_title').attr('value', title);
     $('#feature_id').attr('value', id);
     $('#feature_sortBy').attr('value', sort);

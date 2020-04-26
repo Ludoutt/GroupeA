@@ -1,0 +1,25 @@
+{% extends 'home.html.twig' %}
+
+{% block title %}Bienvenue sur Backlog{% endblock %}
+
+{% block body %}
+    <div class="form-container">
+        <div class="form-box">
+            <div class="lateral-box"></div>
+            <div class="form">
+                <h1>bienvenue sur backlog</h1>
+                <br>
+                <div class="link">
+                    {% if app.user %}
+                        <a class="custom-button" href="{{ path('app_logout') }}">Déconnexion</a>
+                    {% else %}
+                        <a class="custom-button" href="{{ path('app_login') }}">Se connecter</a>
+                    {% endif %}
+                    <br>
+                    <br>
+                    <a class="custom-button" href="#">S'inscrire</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

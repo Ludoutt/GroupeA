@@ -5,3 +5,4 @@ easy_admin:
         - App\Entity\CategoryFeature
         - App\Entity\Feature
         - App\Entity\Project
+        - App\Entity\User
