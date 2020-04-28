@@ -49,19 +49,14 @@ class Feature
     private $updatedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\CategoryFeature", mappedBy="feature", orphanRemoval=true)
-     */
-    private $categoryFeatures;
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $sortBy;
 
-    public function __construct()
-    {
-        $this->categoryFeatures = new ArrayCollection();
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="features")
+     */
+    private $category;
 
     public function getId(): ?int
     {
@@ -140,37 +135,6 @@ class Feature
         return $this;
     }
 
-    /**
-     * @return Collection|CategoryFeature[]
-     */
-    public function getCategoryFeatures(): Collection
-    {
-        return $this->categoryFeatures;
-    }
-
-    public function addCategoryFeature(CategoryFeature $categoryFeature): self
-    {
-        if (!$this->categoryFeatures->contains($categoryFeature)) {
-            $this->categoryFeatures[] = $categoryFeature;
-            $categoryFeature->setFeature($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCategoryFeature(CategoryFeature $categoryFeature): self
-    {
-        if ($this->categoryFeatures->contains($categoryFeature)) {
-            $this->categoryFeatures->removeElement($categoryFeature);
-            // set the owning side to null (unless already changed)
-            if ($categoryFeature->getFeature() === $this) {
-                $categoryFeature->setFeature(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getSortBy(): ?int
     {
         return $this->sortBy;
@@ -186,5 +150,17 @@ class Feature
     public function __toString()
     {
         return $this->getTitle();
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
     }
 }
