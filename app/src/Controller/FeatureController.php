@@ -20,6 +20,10 @@ class FeatureController extends AbstractController
      */
     public function index(FeatureRepository $featureRepository): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         return $this->render('feature/index.html.twig', [
             'features' => $featureRepository->findAll(),
         ]);
@@ -30,6 +34,10 @@ class FeatureController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         $feature = new Feature();
         $form = $this->createForm(FeatureType::class, $feature);
         $form->handleRequest($request);
@@ -56,6 +64,10 @@ class FeatureController extends AbstractController
      */
     public function show(Feature $feature): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         return $this->render('feature/show.html.twig', [
             'feature' => $feature,
         ]);
@@ -66,6 +78,10 @@ class FeatureController extends AbstractController
      */
     public function edit(Request $request, Feature $feature): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         $form = $this->createForm(FeatureType::class, $feature);
         $form->handleRequest($request);
 
@@ -89,6 +105,10 @@ class FeatureController extends AbstractController
      */
     public function delete(Request $request, Feature $feature): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+        
         if ($this->isCsrfTokenValid('delete'.$feature->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($feature);
