@@ -13,17 +13,17 @@
                             </div>
                             <div class="features-box">
                                 {% for category in project.categories %}
-                                    {% for categoryFeature in category.categoryFeatures | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
+                                    {% for feature in category.features | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
                                         <div class="feature-box">
-                                            <div class="feature-id h3">{{ categoryFeature.feature.id }}</div>
+                                            <div class="feature-id h3">{{ feature.id }}</div>
                                             <div class="feature-content">
-                                                <h3 class="feature-title">{{ categoryFeature.feature.title }}</h3>
-                                                <div class="feature-job_value h3">{{ categoryFeature.feature.jobValue }}</div>
-                                                <div class="description">{{ categoryFeature.feature.description }}</div>
-                                                <div class="validation">{{ categoryFeature.feature.acceptationValidation }}</div>
+                                                <h3 class="feature-title">{{ feature.title }}</h3>
+                                                <div class="feature-job_value h3">{{ feature.jobValue }}</div>
+                                                <div class="description">{{ feature.description }}</div>
+                                                <div class="validation">{{ feature.acceptationValidation }}</div>
                                             </div>
                                             <div class="feature-action">
-                                                {% set feature = {'id': categoryFeature.feature.id, 'project': project.id} %}
+                                                {% set feature = {'id': feature.id, 'project': project.id} %}
                                                 {% include 'feature/_delete_form.html.twig' with feature %}
                                             </div>
                                         </div>
@@ -41,14 +41,14 @@
                                 {% include 'category/_delete_form.html.twig' with categoryform %}
                             </div>
                             <div class="features-box">
-                                {% for categoryFeature in category.categoryFeatures | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
+                                {% for feature in category.features | sort((a, b) => a.feature.sortBy > b.feature.sortBy) %}
                                     <div class="feature-box">
-                                        <div class="feature-id h3">{{ categoryFeature.feature.id }}</div>
+                                        <div class="feature-id h3">{{ feature.id }}</div>
                                         <div class="feature-content">
-                                            <h3 class="feature-title">{{ categoryFeature.feature.title }}</h3>
-                                            <div class="feature-job_value h3">{{ categoryFeature.feature.jobValue }}</div>
-                                            <div class="description">{{ categoryFeature.feature.description }}</div>
-                                            <div class="validation">{{ categoryFeature.feature.acceptationValidation }}</div>
+                                            <h3 class="feature-title">{{ feature.title }}</h3>
+                                            <div class="feature-job_value h3">{{ feature.jobValue }}</div>
+                                            <div class="description">{{ feature.description }}</div>
+                                            <div class="validation">{{ feature.acceptationValidation }}</div>
                                         </div>
                                     </div>
                                 {% endfor %}

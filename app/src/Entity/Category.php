@@ -40,13 +40,13 @@ class Category
     private $project;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\CategoryFeature", mappedBy="category", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Feature", mappedBy="category")
      */
-    private $categoryFeatures;
+    private $features;
 
     public function __construct()
     {
-        $this->categoryFeatures = new ArrayCollection();
+        $this->features = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -102,39 +102,39 @@ class Category
         return $this;
     }
 
-    /**
-     * @return Collection|CategoryFeature[]
-     */
-    public function getCategoryFeatures(): Collection
+    public function __toString()
     {
-        return $this->categoryFeatures;
+        return $this->getTitle();
     }
 
-    public function addCategoryFeature(CategoryFeature $categoryFeature): self
+    /**
+     * @return Collection|Feature[]
+     */
+    public function getFeatures(): Collection
     {
-        if (!$this->categoryFeatures->contains($categoryFeature)) {
-            $this->categoryFeatures[] = $categoryFeature;
-            $categoryFeature->setCategory($this);
+        return $this->features;
+    }
+
+    public function addFeature(Feature $feature): self
+    {
+        if (!$this->features->contains($feature)) {
+            $this->features[] = $feature;
+            $feature->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removeCategoryFeature(CategoryFeature $categoryFeature): self
+    public function removeFeature(Feature $feature): self
     {
-        if ($this->categoryFeatures->contains($categoryFeature)) {
-            $this->categoryFeatures->removeElement($categoryFeature);
+        if ($this->features->contains($feature)) {
+            $this->features->removeElement($feature);
             // set the owning side to null (unless already changed)
-            if ($categoryFeature->getCategory() === $this) {
-                $categoryFeature->setCategory(null);
+            if ($feature->getCategory() === $this) {
+                $feature->setCategory(null);
             }
         }
 
         return $this;
-    }
-
-    public function __toString()
-    {
-        return $this->getTitle();
     }
 }
