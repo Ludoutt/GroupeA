@@ -74,7 +74,6 @@
     </div>
     {% set project = {'project': project.id} %}
     {% include 'category/_popup_new_category.html.twig' with project %}
-    {% include 'feature/_popup_edit_feature.html.twig' with project %}
 {% endblock %}
 {% block javascripts_front %}
     <script src="{{ asset('build/project.js') }}"></script>
