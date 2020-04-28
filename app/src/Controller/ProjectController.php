@@ -21,12 +21,26 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProjectController extends AbstractController
 {
+
     /**
      * @Route("/", name="project_index", methods={"GET"})
      */
     public function index(ProjectRepository $projectRepository): Response
     {
-        return $this->render('project/index.html.twig', ['projects' => $projectRepository->findAll()]);
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
+        $project = new Project();
+        $formProject = $this->createForm(ProjectType::class, $project, [
+            'action' => $this->generateUrl('project_new'),
+            'method' => 'POST',
+        ]);
+        
+        return $this->render('project/index.html.twig', [
+            'projects' => $projectRepository->findAll(),
+            'formProject' => $formProject->createView(),
+            ]);
     }
 
     /**
@@ -34,6 +48,10 @@ class ProjectController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         $project = new Project();
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
@@ -60,6 +78,10 @@ class ProjectController extends AbstractController
      */
     public function show(Project $project): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         $category = new Category();
         $formCategory = $this->createForm(CategoryType::class, $category, [
             'action' => $this->generateUrl('category_new'),
@@ -82,6 +104,10 @@ class ProjectController extends AbstractController
      */
     public function edit(Request $request, Project $project): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
 
@@ -105,6 +131,10 @@ class ProjectController extends AbstractController
      */
     public function delete(Request $request, Project $project): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('root');
+        }
+        
         if ($this->isCsrfTokenValid('delete'.$project->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($project);

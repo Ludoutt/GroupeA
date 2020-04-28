@@ -34,10 +34,7 @@ h4,
   margin: 0;
   padding: 0; }
 
-p, .project .project-container .project-view .project-col .category-box .features-box .feature-box .feature-content .description,
-.project .project-container .project-view .project-col .category-box .features-box .feature-box .feature-content .validation,
-.project .project-container .project-view .global-col .category-box .features-box .feature-box .feature-content .description,
-.project .project-container .project-view .global-col .category-box .features-box .feature-box .feature-content .validation {
+p {
   font-family: "Nunito", sans-serif;
   font-size: 9px;
   color: #707070;
@@ -257,10 +254,127 @@ nav#main-nav {
                 .project .project-container .project-view .global-col .category-box .features-box .feature-box .feature-content .description,
                 .project .project-container .project-view .global-col .category-box .features-box .feature-box .feature-content .validation {
                   display: none; }
+      .project .project-container .project-view .global-col .feature-box {
+        flex-direction: column; }
       .project .project-container .project-view .global-col .feature-action {
         position: absolute;
         bottom: 0;
         right: 0; }
+      .project .project-container .project-view .global-col .feature-developp-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer; }
+        .project .project-container .project-view .global-col .feature-developp-button img {
+          padding: 1px 6px; }
+      .project .project-container .project-view .global-col .feature-developp {
+        display: none; }
+        .project .project-container .project-view .global-col .feature-developp > div {
+          margin-top: 12px; }
+        .project .project-container .project-view .global-col .feature-developp .description-title,
+        .project .project-container .project-view .global-col .feature-developp .validation-title {
+          border: none;
+          background-color: #4bc3aa;
+          color: #ffffff;
+          padding: 3px 14px; }
+        .project .project-container .project-view .global-col .feature-developp .description,
+        .project .project-container .project-view .global-col .feature-developp .validation {
+          border: solid 1px #4bc3aa;
+          padding: 10px; }
+        .project .project-container .project-view .global-col .feature-developp .wrap-edit {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center; }
+          .project .project-container .project-view .global-col .feature-developp .wrap-edit .btn {
+            padding: 2px 10px; }
+
+.all-project .box-project,
+.edit-project .box-project {
+  -webkit-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  height: 225px;
+  border-left: 4px solid #4bc3aa;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 140px; }
+.all-project h1,
+.edit-project h1 {
+  background-color: #018F74;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  width: 221px;
+  height: 50px;
+  line-height: 50px;
+  margin: 57px 0 100px 0; }
+.all-project h2,
+.edit-project h2 {
+  font-size: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #707070;
+  text-align: center; }
+.all-project .box-project,
+.edit-project .box-project {
+  -webkit-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  height: 225px;
+  border-left: 4px solid #4bc3aa;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 140px; }
+.all-project .creation-date,
+.edit-project .creation-date {
+  padding-top: 20px;
+  padding-bottom: 5px; }
+.all-project .update-date,
+.edit-project .update-date {
+  padding-bottom: 30px; }
+.all-project .creation-date,
+.all-project .update-date,
+.edit-project .creation-date,
+.edit-project .update-date {
+  font-size: 12px;
+  font-weight: 700; }
+.all-project .btn-project,
+.edit-project .btn-project {
+  background-color: #018F74;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px; }
+  .all-project .btn-project:hover,
+  .edit-project .btn-project:hover {
+    background-color: #4bc3aa; }
+.all-project .color-black,
+.edit-project .color-black {
+  color: #000; }
+.all-project .plus,
+.edit-project .plus {
+  width: 60%; }
+.all-project .new-project,
+.edit-project .new-project {
+  text-align: center;
+  cursor: pointer; }
+.all-project .box-plus,
+.edit-project .box-plus {
+  height: 225px; }
+.all-project .btn-project-danger,
+.edit-project .btn-project-danger {
+  background-color: red;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px; }
+
+.edit-project #project_title {
+  margin-left: 10px; }
 
 .popup {
   display: none;
@@ -269,6 +383,8 @@ nav#main-nav {
   bottom: 0;
   left: 0;
   right: 0; }
+  .popup.-no-menu {
+    top: 55px; }
   .popup .popup-background {
     position: absolute;
     top: 0;
