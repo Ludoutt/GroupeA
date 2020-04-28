@@ -259,12 +259,18 @@ nav#main-nav {
         bottom: 0;
         right: 0; }
 
-body {
-  font-family: 'Ubuntu', sans-serif; }
-
-h1 {
+.all-project .box-project {
+  -webkit-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
+  height: 225px;
+  border-left: 4px solid #4bc3aa;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 140px; }
+.all-project h1 {
   background-color: #018F74;
-  color: #fff;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 700;
   text-align: center;
@@ -273,62 +279,51 @@ h1 {
   height: 50px;
   line-height: 50px;
   margin: 57px 0 100px 0; }
-
-h2 {
+.all-project h2 {
   font-size: 21px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #666666;
+  color: #707070;
   text-align: center; }
-
-.box-project {
+.all-project .box-project {
   -webkit-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.2);
   height: 225px;
-  border-left: 4px solid #4BC3AA;
+  border-left: 4px solid #4bc3aa;
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 140px; }
-
-.creation-date {
+.all-project .creation-date {
   padding-top: 20px;
   padding-bottom: 5px; }
-
-.update-date {
+.all-project .update-date {
   padding-bottom: 30px; }
-
-.creation-date,
-.update-date {
+.all-project .creation-date,
+.all-project .update-date {
   font-size: 12px;
   font-weight: 700; }
-
-.btn-project {
+.all-project .btn-project {
   background-color: #018F74;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   padding: 10px;
   border-radius: 20px;
   margin-top: 10px; }
-  .btn-project:hover {
-    background-color: #4BC3AA; }
-
-.color-black {
+  .all-project .btn-project:hover {
+    background-color: #4bc3aa; }
+.all-project .color-black {
   color: #000; }
-
-.plus {
+.all-project .plus {
   width: 60%; }
-
-.new-project {
+.all-project .new-project {
   text-align: center; }
-
-.box-plus {
+.all-project .box-plus {
   height: 225px; }
-
-.btn-project-danger {
+.all-project .btn-project-danger {
   background-color: red;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   padding: 10px;
   border-radius: 20px;
   margin-top: 10px; }

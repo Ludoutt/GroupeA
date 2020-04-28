@@ -89,88 +89,99 @@
         }
     }
 }
-body {
-    font-family: 'Ubuntu', sans-serif;
-}
-h1 {
-    background-color: #018F74;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    width: 221px;
-    height: 50px;
-    line-height: 50px;
-    margin: 57px 0 100px 0;
-}
 
-h2 {
-    font-size: 21px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #666666;
-    text-align: center;
-}
-
-.box-project {
-    -webkit-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.2);
-    box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.2);
-    height: 225px;
-    border-left: 4px solid #4BC3AA;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: 140px;
-}
-
-.creation-date {
-    padding-top: 20px;
-    padding-bottom: 5px;
-}
-
-.update-date {
-    padding-bottom: 30px;
-}
-
-.creation-date,
-.update-date {
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.btn-project {
-    background-color: #018F74;
-    text-decoration: none;
-    color: #fff;
-    padding: 10px;
-    border-radius: 20px;
-    margin-top: 10px;
-    &:hover {
-        background-color: #4BC3AA;
+.all-project {
+    .box-project {
+        -webkit-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.2);
+        -moz-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.2);
+        box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.2);
+        height: 225px;
+        border-left: 4px solid $color-green-light;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-bottom: 140px;
     }
-}
 
-.color-black {
-    color: #000;
-}
+    h1 {
+        background-color: $color-green-dark;
+        color: $color-white;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        width: 221px;
+        height: 50px;
+        line-height: 50px;
+        margin: 57px 0 100px 0;
+    }
 
-.plus {
-    width: 60%;
-}
+    h2 {
+        font-size: 21px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $color-default;
+        text-align: center;
+    }
 
-.new-project {
-    text-align: center;
-}
+    .box-project {
+        -webkit-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.2);
+        -moz-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.2);
+        box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.2);
+        height: 225px;
+        border-left: 4px solid $color-green-light;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-bottom: 140px;
+    }
 
-.box-plus {
-    height: 225px;
-}
-.btn-project-danger {
-    background-color: red;
-    text-decoration: none;
-    color: #fff;
-    padding: 10px;
-    border-radius: 20px;
-    margin-top: 10px;
+    .creation-date {
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+
+    .update-date {
+        padding-bottom: 30px;
+    }
+
+    .creation-date,
+    .update-date {
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .btn-project {
+        background-color: $color-green-dark;
+        text-decoration: none;
+        color: $color-white;
+        padding: 10px;
+        border-radius: 20px;
+        margin-top: 10px;
+        &:hover {
+            background-color: $color-green-light;
+        }
+    }
+
+    .color-black {
+        color: #000;
+    }
+
+    .plus {
+        width: 60%;
+    }
+
+    .new-project {
+        text-align: center;
+    }
+
+    .box-plus {
+        height: 225px;
+    }
+    .btn-project-danger {
+        background-color: red;
+        text-decoration: none;
+        color: $color-white;
+        padding: 10px;
+        border-radius: 20px;
+        margin-top: 10px;
+    }   
 }
