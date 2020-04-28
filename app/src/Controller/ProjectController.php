@@ -27,8 +27,17 @@ class ProjectController extends AbstractController
         if (!$this->getUser()) {
             return $this->redirectToRoute('root');
         }
+
+        $project = new Project();
+        $formProject = $this->createForm(ProjectType::class, $project, [
+            'action' => $this->generateUrl('project_new'),
+            'method' => 'POST',
+        ]);
         
-        return $this->render('project/index.html.twig', ['projects' => $projectRepository->findAll()]);
+        return $this->render('project/index.html.twig', [
+            'projects' => $projectRepository->findAll(),
+            'formProject' => $formProject->createView(),
+            ]);
     }
 
     /**

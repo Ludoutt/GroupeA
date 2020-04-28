@@ -23,9 +23,12 @@
                 </div>
             {% endfor %}
             <div class="col-3 box-plus d-flex flex-column align-items-center justify-content-center">
-                <a class="new-project" href="{{ path('project_new') }}"><img class="plus" alt="plus" src="{{ asset('assets/img/plus.svg') }}" /></a>
+                <span class="new-project display-popup" data-popup="-new_project"><img class="plus" alt="plus" src="{{ asset('assets/img/plus.svg') }}" /></span>
             </div>
     </div>
 </div>
-
+{% include 'project/_popup_new_project.html.twig' %}
+{% endblock %}
+{% block javascripts_front %}
+    <script src="{{ asset('build/project.js') }}"></script>
 {% endblock %}
