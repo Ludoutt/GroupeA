@@ -49,10 +49,6 @@ class Category
         $this->features = new ArrayCollection();
     }
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\CategoryFeature", mappedBy="category", orphanRemoval=true)
-     */
-
     public function getId(): ?int
     {
         return $this->id;
