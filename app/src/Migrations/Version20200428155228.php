@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200306094235 extends AbstractMigration
+final class Version20200428155228 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,10 +22,7 @@ final class Version20200306094235 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE category CHANGE updated_at updated_at DATETIME DEFAULT NULL');
-        $this->addSql('ALTER TABLE category_feature CHANGE updated_at updated_at DATETIME DEFAULT NULL');
-        $this->addSql('ALTER TABLE feature CHANGE updated_at updated_at DATETIME DEFAULT NULL');
-        $this->addSql('ALTER TABLE project CHANGE updated_at updated_at DATETIME DEFAULT NULL');
+        $this->addSql('DROP TABLE category_feature');
     }
 
     public function down(Schema $schema) : void
@@ -33,9 +30,8 @@ final class Version20200306094235 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE category CHANGE updated_at updated_at DATETIME NOT NULL');
-        $this->addSql('ALTER TABLE category_feature CHANGE updated_at updated_at DATETIME NOT NULL');
-        $this->addSql('ALTER TABLE feature CHANGE updated_at updated_at DATETIME NOT NULL');
-        $this->addSql('ALTER TABLE project CHANGE updated_at updated_at DATETIME NOT NULL');
+        $this->addSql('CREATE TABLE category_feature (id INT AUTO_INCREMENT NOT NULL, category_id INT NOT NULL, feature_id INT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME DEFAULT NULL, INDEX IDX_D80F351860E4B879 (feature_id), INDEX IDX_D80F351812469DE2 (category_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = \'\' ');
+        $this->addSql('ALTER TABLE category_feature ADD CONSTRAINT FK_D80F351812469DE2 FOREIGN KEY (category_id) REFERENCES category (id)');
+        $this->addSql('ALTER TABLE category_feature ADD CONSTRAINT FK_D80F351860E4B879 FOREIGN KEY (feature_id) REFERENCES feature (id)');
     }
 }
